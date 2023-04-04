@@ -3,9 +3,30 @@ package com.acme;
 public class App {
     public static void main(String[] args) {
         App example = new App();
-        example.printMessage("Hello World");
-        example.printMessage("Hello World");
-        example.checkCredentials(null, "password");
+        example.readFile();
+    }
+
+    public void readFile() {
+        InputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream("file.txt");
+            int data = inputStream.read();
+            while (data != -1) {
+                System.out.print((char) data);
+                data = inputStream.read();
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading the file.");
+        } finally {
+            // Bug: Missing try-catch block around close() method, which can throw an IOException
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void printMessage(String message) {
