@@ -2,7 +2,7 @@ package com.acme;
 
 public class App {
     public static void main(String[] args) {
-        SonarQubeExample example = new SonarQubeExample();
+        App example = new App();
         example.printMessage("Hello World");
         example.printMessage("Hello World");
     }
