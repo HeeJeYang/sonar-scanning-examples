@@ -1,5 +1,8 @@
 package com.acme;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 public class App {
     public static void main(String[] args) {
         App example = new App();
