@@ -20,4 +20,8 @@ public class App {
     public void unusedMethod() {
         System.out.println("This method is not used.");
     }
+    
+    public String getGreeting() {
+        return "Hello world.";
+    }
 }
